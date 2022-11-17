@@ -1,0 +1,10 @@
+from Crypto.Cipher import AES
+
+key = bytes.fromhex("4B29470F38D4A34D1C9F4FC774E4296A")
+iv = bytes.fromhex("B59AEC9251E25E3F9081E427192E5029")
+ct = bytes.fromhex("D2B240F2DE77E085FDE5BFB1EBF76418E4AD85EF8068DA2C252DE1F8DDE70B59E8D757372FB54125785AB982228D8126")
+
+cipher = AES.new(key, AES.MODE_CBC, iv=iv)
+pt = cipher.decrypt(ct)
+
+print(pt)
